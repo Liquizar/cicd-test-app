@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-    lint:
+  lint:
     name: Lint Kubernetes YAML
     runs-on: ubuntu-latest
     steps:
@@ -26,7 +26,6 @@ jobs:
       - name: Validate Kubernetes Manifests
         run: |
           kubeval k8s/*.yaml --strict
-
   build-and-push:
     name: Build & Push Docker Images
     runs-on: ubuntu-latest
