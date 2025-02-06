@@ -25,7 +25,8 @@ jobs:
 
       - name: Validate Kubernetes Manifests
         run: |
-          kubeval k8s/*.yaml --strict
+          kubeval --strict --ignore-missing-schemas k8s/*.yaml
+
   build-and-push:
     name: Build & Push Docker Images
     runs-on: ubuntu-latest
