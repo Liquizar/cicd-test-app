@@ -1,0 +1,14 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: cicd-test-app
+  description: A simple deployment to test CICD integration
+  annotations:
+    argocd/app-name: cicd-test-app
+    backstage.io/kubernetes-id: cicd-test-app
+    backstage.io/techdocs-ref: dir:.
+    github.com/project-slug: Liquizar/cicd-test-app
+spec:
+  type: service
+  lifecycle: experimental
+  owner: devops-team
