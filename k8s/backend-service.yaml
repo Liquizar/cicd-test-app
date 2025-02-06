@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-service
+spec:
+  selector:
+    app: backend
+  ports:
+    - protocol: TCP
+      port: 5000  # Service Port
+      targetPort: 5000  # Container Port
+  type: ClusterIP  # Keeps backend internal, change if needed
