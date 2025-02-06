@@ -3,6 +3,11 @@ kind: Component
 metadata:
   name: cicd-test-app
   description: A simple deployment to test CICD integration
+  links:
+    - url: https://backstage.io/
+      title: BackStage
+    - url: https://github.com/features/actions
+      title: GitHub Actions  
   annotations:
     argocd/app-name: cicd-test-app
     backstage.io/kubernetes-id: cicd-test-app
