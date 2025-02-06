@@ -9,17 +9,23 @@ on:
       - main
 
 jobs:
-  lint:
+    lint:
     name: Lint Kubernetes YAML
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
 
+      - name: Install kubeval
+        run: |
+          curl -sSLO https://github.com/instrumenta/kubeval/releases/latest/download/kubeval-linux-amd64.tar.gz
+          tar -xzf kubeval-linux-amd64.tar.gz
+          chmod +x kubeval
+          sudo mv kubeval /usr/local/bin/
+
       - name: Validate Kubernetes Manifests
-        uses: instrumenta/kubeval-action@v0.1
-        with:
-          files: "k8s/*.yaml"
+        run: |
+          kubeval k8s/*.yaml --strict
 
   build-and-push:
     name: Build & Push Docker Images
