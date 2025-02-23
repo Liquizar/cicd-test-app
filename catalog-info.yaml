@@ -13,6 +13,7 @@ metadata:
     backstage.io/kubernetes-id: cicd-test-app
     backstage.io/techdocs-ref: dir:.
     github.com/project-slug: Liquizar/cicd-test-app
+    backstage.io/linguist: https://github.com/Liquizar/cicd-test-app.git
 spec:
   type: service
   lifecycle: experimental
